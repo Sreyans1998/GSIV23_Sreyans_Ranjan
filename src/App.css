@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+body {
+  width: 100%;
+  min-width: 512px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+}
+
+.NavBar {
+  position: relative;
+  width: 100%;
+  color: red;
+  box-shadow: 1px 18px 12px -13px rgba(0, 0, 0, 0.75);
+}
+.Nav {
+  display: flex;
+  justify-content: space-between;
+}
+.NavItems {
+  margin: 5px 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.NavItems img{
+  border: none;
+  margin: 0 1.5rem;
+  width: 32px;
+}
+.Nodata{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SearchBar {
+  width: 512px;
+  height: 2.5rem;
+  background-color: #DFDFDF;
+  border-radius: 5px;
+  display: flex;
+}
+.serachIcon {
+  border: none;
+  background-color: #DFDFDF;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+.searchInput{
+  border: none;
+  width: 100%;
+  border-radius: 0px 5px 5px 0;
+  mix-blend-mode: darken;
+  color: black;
+  outline: none;
+}
+.content{
+  margin: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto auto;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+.cards{
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.5);
+  width: 280px;
+  height: 350px;
+  margin: 10px 2px 0 2px;
+  transition: ease-in-out 300ms;
+  cursor: pointer;
+}
+.cards:hover{
+  width:280px;
+  margin: 1px 2px 0 2px;
+  box-shadow: 0px 15px 10px -1px rgba(0, 0, 0, 0.5);
+}
+.cards .cardsImg{
+  height:75%;
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  position: relative;
+  background-color: #DFDFDF;
+}
+.cards .cardsImg img{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  height: 100%;
+}
+.cards .cardsBody{
+  border-radius: 0px 0px 10px 10px;
+  height:25%;
+  width: 100%;
+  position: relative;
+}
+.cards .cardsBody .cardsTitle{
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cards .cardsBody .cardsTitle .movieTitle{
+  margin-left: 5px;
+  width: 80%;
+  text-align: start;
+}
+.cards .cardsBody .cardsTitle .rating{
+  margin-right: 5px;
+  width: 20%;
+  text-align: end;
+}
+.cardsBody .cardsText{
+  margin: 10px;
+}
+.detailsView{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.movieContent{
+  height: 512px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+.movieImg{
+  background-color: #DFDFDF;
+  width: 17%;
+  height: 67%;
+  border-radius: 5%;
+}
+.movieImg img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 5%;
+}
+.movieDetails{
+  display: block;
+  width: 60%;
+  height: 100%;
+}
+.movieDetails .movieTitle{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+.movieTitle h2{
+  margin-right: 15px;
+}
+.movieTitle label{
+  margin-left: 15px;
+}
+.movieDetails .movieOverView{
+  margin: 10px;
+  display: block;
+}
+.movieDetails .movieDescription{
+  margin: 10px;
+}
