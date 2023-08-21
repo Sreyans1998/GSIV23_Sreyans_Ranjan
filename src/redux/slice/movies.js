@@ -58,7 +58,8 @@ const moviesReducer = createSlice({
         isLoading: false,
         data: [],
         movieData: null,
-        Error: false
+        Error: false,
+        pageNo: 1,
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMovies.pending, (state, action) => {
@@ -67,6 +68,7 @@ const moviesReducer = createSlice({
         builder.addCase(fetchMovies.fulfilled, (state, action) => {
             state.isLoading =  false;
             state.data = action.payload.results;
+            state.pageNo = state.pageNo + 1;
         })
         builder.addCase(fetchMovies.rejected, (state, action) => {
             console.log("Error", action.payload);
@@ -76,6 +78,7 @@ const moviesReducer = createSlice({
             action.payload.results.forEach(element => {
                 state.data.push(element);
             });;
+            state.pageNo = state.pageNo + 1;
         })
         builder.addCase(fetchMovieDetails.pending, (state, action) => {
             state.movieData = null;

@@ -16,7 +16,9 @@ const DetailsPage = () => {
       <>
         <div className="detailsView">
           <div className="movieContent">
-            <div className="movieImg"></div>
+            <div className="movieImg">
+              {/* <img src={MovieData.poster_path} alt="..." /> */}
+            </div>
             <div className="movieDetails">
               <div className="movieTitle">
                 <h2>{MovieData.original_title}</h2>
@@ -47,10 +49,12 @@ const DetailsPage = () => {
         </div>
       </>
     );
-  }else {
+  } else {
     return (
       <>
-        <h1>404 No data found</h1>
+        <div className="Nodata">
+          <h1>Loading Data..</h1>
+        </div>
       </>
     );
   }

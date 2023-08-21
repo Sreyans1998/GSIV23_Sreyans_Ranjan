@@ -75,14 +75,12 @@ body {
 .cards{
   border-radius: 10px;
   box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.5);
-  width: 280px;
   height: 350px;
   margin: 10px 2px 0 2px;
   transition: ease-in-out 300ms;
   cursor: pointer;
 }
 .cards:hover{
-  width:280px;
   margin: 1px 2px 0 2px;
   box-shadow: 0px 15px 10px -1px rgba(0, 0, 0, 0.5);
 }
@@ -132,14 +130,20 @@ body {
 .movieContent{
   height: 512px;
   margin: 15px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 .movieImg{
   background-color: #DFDFDF;
-  width: 17%;
-  height: 67%;
-  border-radius: 5%;
+  grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 280px;
+    height: 340px;
+    margin: 15px;
+    border-radius: 5%;
 }
 .movieImg img{
   width: 100%;
@@ -148,9 +152,12 @@ body {
   border-radius: 5%;
 }
 .movieDetails{
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
   display: block;
-  width: 60%;
   height: 100%;
+  margin: 15px;
 }
 .movieDetails .movieTitle{
   display: flex;

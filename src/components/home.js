@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Card from '../components/card';
 import { fetchMovies, fetchNewMovies } from '../redux/slice/movies';
@@ -6,15 +6,13 @@ import { fetchMovies, fetchNewMovies } from '../redux/slice/movies';
 const Home = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state);
-    const [pageNo , setPageNo] = useState(1);
     const handleScroll = async () => {
     //     console.log("window.innerHeight ",window.innerHeight);
     //     console.log("document.documentElement.scrollTop ",document.documentElement.scrollTop);
     //     console.log("document.documentElement.scrollHeight ",document.documentElement.scrollHeight);
         try {
             if((window.innerHeight + document.documentElement.scrollTop) >= (document.documentElement.scrollHeight - 10)){
-                await dispatch(fetchNewMovies(`https://api.themoviedb.org/3/discover/movie?page=${pageNo + 1}`));
-                setPageNo(pageNo + 1);
+                await dispatch(fetchNewMovies(`https://api.themoviedb.org/3/discover/movie?page=${state.movies.pageNo + 1}`));
             }
         } catch (error) {
             console.log(error);
@@ -25,7 +23,7 @@ const Home = () => {
         window.addEventListener("scroll", handleScroll);
     }, [])
     if(state.movies.data.length === 0 || state.movies.data === undefined){
-        dispatch(fetchMovies(`https://api.themoviedb.org/3/discover/movie?page=${pageNo}`));
+        dispatch(fetchMovies(`https://api.themoviedb.org/3/discover/movie?page=${state.movies.pageNo}`));
     }
 
     if(state.movies.isLoading && !state.movies.Error){
